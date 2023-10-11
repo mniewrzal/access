@@ -12,3 +12,5 @@ jobs:
           repo: storj
           excludes: prerelease, draft
       - run: echo "🎉 The job was automatically triggered by a ${{ steps.storj-release.outputs.release }} event."
+      - run: wget "https://github.com/storj/storj/releases/download/${{ steps.storj-release.outputs.release }}/uplink_linux_amd64.zip"
+      - run: sha256 "uplink_linux_amd64.zip"
